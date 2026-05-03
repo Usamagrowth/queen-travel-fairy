@@ -57,7 +57,7 @@ const Booking = () => {
       <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-2 items-center">
         <div className="space-y-8">
           <p className="text-sm uppercase tracking-[0.35em] text-[#D4AF37] font-semibold">Inquiry Form</p>
-          <h2 className="text-3xl font-serif font-bold leading-tight">
+          <h2 className="text-xl md:text-3xl font-serif font-bold leading-tight">
             Let our experts craft your next journey.
           </h2>
           <p className="text-slate-300 text-lg leading-relaxed font-sans max-w-xl">

@@ -27,7 +27,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto relative">
         <div className="mb-12 text-center">
           <p className="text-sm uppercase tracking-[0.4em] text-[#D4AF37] mb-3 font-semibold">Our Offerings</p>
-          <h2 className="text-3xl font-serif font-bold leading-tight">
+          <h2 className="text-xl md:text-3xl font-serif font-bold leading-tight">
             Exceptional services crafted for every royal itinerary.
           </h2>
         </div>

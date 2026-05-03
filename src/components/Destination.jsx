@@ -34,7 +34,7 @@ const Destinations = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
           <p className="text-sm uppercase tracking-[0.4em] text-[#D4AF37] mb-3">The Collection</p>
-          <h2 className="text-3xl font-serif font-bold leading-tight">
+          <h2 className="text-xl md:text-3xl font-serif font-bold leading-tight">
             Premium Destinations Crafted for the Discerning Traveler.
           </h2>
         </div>

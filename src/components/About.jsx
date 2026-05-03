@@ -9,7 +9,7 @@ const About = () => {
             <span className="h-1 w-8 bg-[#D4AF37] rounded" />
             About Queen Travel Fairy
           </div>
-          <h2 className="text-3xl  font-serif font-bold leading-tight">
+          <h2 className="text-xl md:text-3xl  font-serif font-bold leading-tight">
             Bespoke luxury crafted with fairy-tale refinement.
           </h2>
           <p className="text-slate-300 text-lg leading-relaxed max-w-xl font-sans">

@@ -75,7 +75,7 @@ const Booking = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6 rounded-[32px] border border-white/10 bg-slate-950/90 p-8 shadow-2xl shadow-slate-950/40">
+        <form onSubmit={handleSubmit} className="space-y-6 rounded-4xl border border-white/10 bg-slate-950/90 p-8 shadow-2xl shadow-slate-950/40">
           <div className="grid gap-6 sm:grid-cols-2">
             <label className="space-y-3">
               <span className="text-sm text-slate-300 font-sans">Name</span>
@@ -170,7 +170,7 @@ const Booking = () => {
 
           <button
             type="submit"
-            className="w-fit rounded-full bg-gradient-to-r from-[#D4AF37] via-[#f7d671] to-[#d4af37] px-3 py-3 text-slate-950 font-semibold uppercase tracking-[0.15em] shadow-xl shadow-[#D4AF37]/20 transition-transform duration-200 cursor-pointer hover:-translate-y-1"
+            className="w-fit rounded-full bg-linear-to-r from-[#D4AF37] via-[#f7d671] to-[#d4af37] px-3 py-3 text-slate-950 font-semibold uppercase tracking-[0.15em] shadow-xl shadow-[#D4AF37]/20 transition-transform duration-200 cursor-pointer hover:-translate-y-1"
           >
             Request Consultation
           </button>

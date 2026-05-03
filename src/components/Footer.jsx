@@ -1,4 +1,5 @@
-﻿import { Facebook, Instagram, Mail, MapPin, Phone, Twitter } from 'lucide-react';
+﻿import { Mail, MapPin, Phone } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -7,23 +8,23 @@ const Footer = () => {
                 <div className="grid gap-12 md:grid-cols-3">
                     <div className="space-y-5">
                         <div>
-                            <p className="text-3xl font-semibold tracking-tight text-white">Queen Travel</p>
+                            <p className="text-3xl font-semibold tracking-tight text-white">Queen Travel Fairy</p>
                             <p className="mt-3 max-w-sm text-slate-400">
                                 Discover unforgettable journeys with luxury service, custom itineraries, and expert local guides. Let us make your next trip effortless.
                             </p>
                         </div>
                         <div className="space-y-3 text-slate-400">
                             <div className="flex items-start gap-3">
-                                <MapPin className="h-5 w-5 text-cyan-400" />
+                                <MapPin className="h-5 w-5 text-[#D4AF37] " />
                                 <span>123 Royal Avenue, City Center, Dreamland</span>
                             </div>
                             <div className="flex items-center gap-3">
-                                <Phone className="h-5 w-5 text-cyan-400" />
-                                <a href="tel:+1234567890" className="hover:text-white transition-colors">+1 (234) 567-890</a>
+                                <Phone className="h-5 w-5 text-[#D4AF37] " />
+                                <a href="tel:+1 504-517-4191" className="hover:text-white transition-colors">+1 504-517-4191</a>
                             </div>
                             <div className="flex items-center gap-3">
-                                <Mail className="h-5 w-5 text-cyan-400" />
-                                <a href="mailto:contact@queentravel.com" className="hover:text-white transition-colors">contact@queentravel.com</a>
+                                <Mail className="h-5 w-5 text-[#D4AF37] " />
+                                <a href="mailto:Queentravelfairy@yahoo.com" className="hover:text-white transition-colors">Queentravelfairy@yahoo.com</a>
                             </div>
                         </div>
                     </div>
@@ -66,7 +67,7 @@ const Footer = () => {
                     </div>
 
                     <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 shadow-[0_0_60px_rgba(15,23,42,0.35)]">
-                        <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Join the Club</h3>
+                        <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">Join the Club</h3>
                         <p className="mt-4 text-slate-400">Sign up for travel tips, destination launches, and exclusive offers delivered monthly.</p>
                         <form className="mt-6 space-y-4" onSubmit={(e) => e.preventDefault()}>
                             <label className="sr-only" htmlFor="footer-email">Email</label>
@@ -74,24 +75,24 @@ const Footer = () => {
                                 id="footer-email"
                                 type="email"
                                 placeholder="Enter your email"
-                                className="w-full rounded-2xl border border-slate-800 bg-slate-950 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                                className="w-full rounded-2xl border border-slate-800 bg-slate-950 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
                             />
                             <button
                                 type="submit"
-                                className="w-full rounded-2xl bg-cyan-500 px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+                                className="w-full rounded-2xl bg-[#D4AF37] px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-[#f7d671]"
                             >
                                 Subscribe
                             </button>
                         </form>
                         <div className="mt-6 flex items-center gap-4 text-slate-400">
-                            <a href="https://www.facebook.com" target="_blank" rel="noreferrer" className="rounded-full border border-slate-800 p-3 transition hover:border-cyan-400 hover:text-cyan-300">
-                                <Facebook className="h-4 w-4" />
+                            <a href="web.facebook.com/QueenTravelFairy" target="_blank" rel="noreferrer" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
+                                <FaFacebook className="h-4 w-4" />
                             </a>
-                            <a href="https://www.instagram.com" target="_blank" rel="noreferrer" className="rounded-full border border-slate-800 p-3 transition hover:border-cyan-400 hover:text-cyan-300">
-                                <Instagram className="h-4 w-4" />
+                            <a href="https://www.instagram.com" target="_blank" rel="noreferrer" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
+                                <FaInstagram className="h-4 w-4" />
                             </a>
-                            <a href="https://www.twitter.com" target="_blank" rel="noreferrer" className="rounded-full border border-slate-800 p-3 transition hover:border-cyan-400 hover:text-cyan-300">
-                                <Twitter className="h-4 w-4" />
+                            <a href="https://www.twitter.com" target="_blank" rel="noreferrer" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
+                                <FaTwitter className="h-4 w-4" />
                             </a>
                         </div>
                     </div>

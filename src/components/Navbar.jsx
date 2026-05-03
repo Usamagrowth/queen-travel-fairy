@@ -9,7 +9,7 @@ const toggleMobileNav = () => {
 };
      return(
         <>
-     <nav className='flex justify-between items-center px-10 py-3 '>
+     <nav className='flex justify-between items-center px-5 py-5 '>
        <a className="w-20 h-20" href="/">
         <img className="w-full h-full object-cover" src={logo} alt="" />
       </a>
@@ -35,14 +35,14 @@ const toggleMobileNav = () => {
     </nav>
  {mobileNav && (
     <aside>
-      <ul className='flex md:hidden flex-col px-10 items-end gap-5'>
+      <ul className='flex md:hidden flex-col px-5 pb-5 items-end gap-5'>
             <li className='text-xl'><a href="#home">Home</a></li>
             <li className='text-xl'><a href="#about">About</a></li>
             <li className='text-xl'><a href="#destination">Destination</a></li>
             <li className='text-xl'><a href="#services">Services</a></li>
             <li className='text-xl'><a href="#reviews">Reviews</a></li>
         </ul>
-   </aside>)};
+   </aside>)}
    </>
   );
 };

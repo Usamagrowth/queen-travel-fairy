@@ -17,7 +17,7 @@ const Testimonia = () => {
     }, []);
     
   return (
-    <section id="reviews" data-aos="zoom-in" data-aos-duration="2000" className="relative mt-20 py-20 bg-slate-950">
+    <section id="reviews" data-aos="zoom-in" data-aos-duration="2000" className="relative mt-20 py-5 bg-slate-950">
         <section className="why-choose-us px-6">
             <div className="container">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-10">

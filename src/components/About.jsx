@@ -2,7 +2,7 @@ import { AccessibilityIcon } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(96,165,250,0.12),_transparent_30%),#0f172a] text-white px-6 py-16">
+    <section id="about" className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(96,165,250,0.12),_transparent_30%),#0f172a] text-white px-6 py-5">
       <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-2 items-center">
         <div className="space-y-8">
           <div className="inline-flex items-center gap-3 uppercase tracking-[0.3em] text-sm text-[#D4AF37] font-semibold">
@@ -59,7 +59,7 @@ const About = () => {
                   description: "Anticipatory support available whenever you need it, from planning through return.",
                 },
               ].map((item) => (
-                <div key={item.title} className="flex gap-4 items-start rounded-3xl border border-white/10 bg-slate-950/60 p-5">
+                <div key={item.title} className="flex gap-4 items-start rounded-3xl border border-white/10 bg-slate-950/60 p-3">
                   <div className="mt-1 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#D4AF37]/20 text-[#D4AF37] text-xl font-bold">
                     <AccessibilityIcon />
                   </div>
@@ -71,7 +71,7 @@ const About = () => {
               ))}
             </div>
 
-            <div className="rounded-[28px] border border-[#D4AF37]/15 bg-[#111827]/90 p-6">
+            <div className="rounded-[28px] border border-[#D4AF37]/15 bg-[#111827]/90 p-4">
               <p className="text-sm uppercase tracking-[0.35em] text-[#D4AF37] font-semibold">Fairy Glow Promise</p>
               <p className="mt-4 text-slate-300 text-sm font-sans leading-relaxed">
                 We make every stay, transfer, and experience feel luminous, polished, and thoughtfully elevated. This is travel that delights at every turn.

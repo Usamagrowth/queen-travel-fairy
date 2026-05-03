@@ -20,7 +20,7 @@ const reviews = [
 
 const Review = () => {
   return (
-    <section id="review" className="min-h-screen bg-slate-950 text-white px-6 py-16">
+    <section id="review" className="min-h-screen bg-slate-950 text-white px-6 py-5">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
           <p className="text-sm uppercase tracking-[0.4em] text-[#D4AF37] mb-3 font-semibold">Client Testimonials</p>

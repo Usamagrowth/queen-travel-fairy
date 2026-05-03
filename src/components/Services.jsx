@@ -21,13 +21,13 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="relative min-h-screen bg-slate-950 text-white px-6 py-16 overflow-hidden">
+    <section id="services" className="relative min-h-screen bg-slate-950 text-white px-6 py-5 overflow-hidden">
       <div className="pointer-events-none absolute -left-20 top-16 h-80 w-80 rounded-full bg-[#D4AF37]/10 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-1/4 h-72 w-72 rounded-full bg-[#7dd3fc]/10 blur-3xl" />
       <div className="max-w-7xl mx-auto relative">
         <div className="mb-12 text-center">
           <p className="text-sm uppercase tracking-[0.4em] text-[#D4AF37] mb-3 font-semibold">Our Offerings</p>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight">
+          <h2 className="text-3xl font-serif font-bold leading-tight">
             Exceptional services crafted for every royal itinerary.
           </h2>
         </div>

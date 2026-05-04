@@ -31,7 +31,7 @@ const Hero = () => {
   }, [slides.length]);
 
   return (
-   <section id="home" className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-3 w-full">
+   <section id="home" className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-5 w-full">
         {/* Slideshow */}
         <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl overflow-hidden ">
            {slides.map((slide, idx) => (

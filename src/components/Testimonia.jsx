@@ -17,11 +17,11 @@ const Testimonia = () => {
     }, []);
     
   return (
-    <section id="reviews" data-aos="zoom-in" data-aos-duration="2000" className="relative mt-20 pb-3 bg-slate-950">
+    <section id="reviews" data-aos="zoom-in" data-aos-duration="2000" className="relative mt-20  bg-slate-950">
         <section className="why-choose-us px-6">
             <div className="container">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-10">
-                    <div className="relative lg:flex justify-center items-center max-w-[360px] md:max-w-[450px]  max-h-[360px]">
+                    <div className="relative lg:flex justify-center items-center max-w-[360px] md:max-w-[550px] md:max-h-[500px]  max-h-[360px]">
                         <img src="https://plus.unsplash.com/premium_photo-1748865089074-9b62d357c817?q=80&w=870&auto=format&fit=crop" alt="Travelers" className="relative z-10 rounded-lg max-w-full h-full"/>
                     </div>
 

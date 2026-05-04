@@ -21,7 +21,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="relative min-h-screen bg-slate-950 text-white px-6 py-5 overflow-hidden">
+    <section id="services" className="relative min-h-screen bg-slate-950 text-white px-6  overflow-hidden">
       <div className="pointer-events-none absolute -left-20 top-16 h-80 w-80 rounded-full bg-[#D4AF37]/10 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-1/4 h-72 w-72 rounded-full bg-[#7dd3fc]/10 blur-3xl" />
       <div className="max-w-7xl mx-auto relative">

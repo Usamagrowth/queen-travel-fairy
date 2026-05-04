@@ -21,7 +21,7 @@ const Testimonia = () => {
         <section className="why-choose-us px-6">
             <div className="container">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-10">
-                    <div className="relative lg:flex justify-center items-center max-w-[360px] md:max-w-[450px]  h-[400px]">
+                    <div className="relative lg:flex justify-center items-center max-w-[360px] md:max-w-[450px]  max-h-[360px]">
                         <img src="https://plus.unsplash.com/premium_photo-1748865089074-9b62d357c817?q=80&w=870&auto=format&fit=crop" alt="Travelers" className="relative z-10 rounded-lg max-w-full h-full"/>
                     </div>
 

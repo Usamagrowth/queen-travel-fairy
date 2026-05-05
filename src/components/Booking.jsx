@@ -1,19 +1,6 @@
 ﻿import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-/*
- * EmailJS Setup Instructions:
- * 1. Go to https://www.emailjs.com/ and create an account
- * 2. Create an email service (Gmail, Outlook, etc.)
- * 3. Create an email template with these variables:
- *    - {{from_name}} - Customer's name
- *    - {{from_email}} - Customer's email
- *    - {{destination}} - Selected destination
- *    - {{travel_date}} - Travel date
- *    - {{return_date}} - Return date
- *    - {{to_name}} - Your business name
- * 4. Replace the SERVICE_ID, TEMPLATE_ID, and PUBLIC_KEY below with your actual values
- */
 
 const Booking = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +19,7 @@ const Booking = () => {
   const SERVICE_ID = 'service_hfchuvt';
   const TEMPLATE_ID = 'template_0tmahsn';
   const PUBLIC_KEY = 'rl5-5EWhF22Km5XjP';
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -126,7 +113,7 @@ const Booking = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6 rounded-4xl border border-white/10 bg-slate-950/90 p-8 shadow-2xl shadow-slate-950/40">
+        <form  onSubmit={handleSubmit} className="space-y-6 rounded-4xl border border-white/10 bg-slate-950/90 p-8 shadow-2xl shadow-slate-950/40">
           <div className="grid gap-6 sm:grid-cols-2">
             <label className="space-y-3">
               <span className="text-sm text-slate-300 font-sans">Name</span>
@@ -202,7 +189,7 @@ const Booking = () => {
                 name="travelDate"
                 value={formData.travelDate}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-slate-800 bg-slate-900 px-4 py-4 text-white outline-none transition-all focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]"
+                className="w-full rounded-lg border border-slate-800 bg-slate-900 px-4 py-4 text-white outline-none transition-all focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] [&::-webkit-calendar-picker-indicator]:invert [&::-webkit-calendar-picker-indicator]:brightness-0 [&::-webkit-calendar-picker-indicator]:contrast-100"
               />
               {errors.travelDate && <p className="text-red-400 text-sm">{errors.travelDate}</p>}
             </label>
@@ -213,7 +200,7 @@ const Booking = () => {
                 name="returnDate"
                 value={formData.returnDate}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-slate-800 bg-slate-900 px-4 py-4 text-white outline-none transition-all focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]"
+                className="w-full rounded-lg border border-slate-800 bg-slate-900 px-4 py-4 text-white outline-none transition-all focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] [&::-webkit-calendar-picker-indicator]:invert [&::-webkit-calendar-picker-indicator]:brightness-0 [&::-webkit-calendar-picker-indicator]:contrast-100"
               />
               {errors.returnDate && <p className="text-red-400 text-sm">{errors.returnDate}</p>}
             </label>

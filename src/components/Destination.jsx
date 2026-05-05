@@ -1,4 +1,9 @@
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 const Destinations = () => {
   const destinations = [
@@ -28,9 +33,9 @@ const Destinations = () => {
       image: "https://plus.unsplash.com/premium_photo-1687984123129-1794500ac338?q=80&w=687&auto=format&fit=crop",
     },
   ];
-
+  
   return (
-    <section id="destination" className=" bg-slate-950 text-white py-5 px-6 ">
+    <section id="destination" className="bg-slate-950 text-white py-12 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
           <p className="text-sm uppercase tracking-[0.4em] text-[#D4AF37] mb-3">The Collection</p>
@@ -39,13 +44,34 @@ const Destinations = () => {
           </h2>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {destinations.map((destination) => (
-            <motion.div
-              key={destination.city}
-              whileHover={{ scale: 1.03 }}
-              className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/80 shadow-2xl shadow-black/30"
-            >
+        {/* Carousel Container */}
+        <div className="relative group">
+          <Swiper
+            spaceBetween={24}
+            slidesPerView={1}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            modules={[Autoplay, Navigation]}
+            speed={1500}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            navigation={{
+              nextEl: '.destination-button-next',
+              prevEl: '.destination-button-prev',
+            }}
+            className="w-full"
+          >
+            {destinations.map((destination) => (
+              <SwiperSlide key={destination.city}>
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/80 shadow-2xl shadow-black/30 h-[320px]"
+                >
               <div className="absolute inset-0 overflow-hidden">
                 <motion.img
                   src={destination.image}
@@ -62,8 +88,23 @@ const Destinations = () => {
                 </div>
               </div>
               <div className="pointer-events-none absolute inset-0 border border-transparent transition-all duration-500 group-hover:border-[#D4AF37]/50 group-hover:shadow-[0_0_40px_rgba(212,175,55,0.18)] rounded-[28px]" />
-            </motion.div>
-          ))}
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          
+          {/* Navigation Buttons */}
+          <button
+            className="destination-button-prev absolute -left-4 md:-left-12 top-1/2 transform -translate-y-1/2 bg-[#D4AF37] hover:bg-[#FFD966] text-slate-950 p-3 rounded-full transition-all duration-300 hover:scale-110 z-10 opacity-0 group-hover:opacity-100"
+          >
+            <FaChevronLeft size={20} />
+          </button>
+          
+          <button
+            className="destination-button-next absolute -right-4 md:-right-12 top-1/2 transform -translate-y-1/2 bg-[#D4AF37] hover:bg-[#FFD966] text-slate-950 p-3 rounded-full transition-all duration-300 hover:scale-110 z-10 opacity-0 group-hover:opacity-100"
+          >
+            <FaChevronRight size={20} />
+          </button>
         </div>
       </div>
     </section>

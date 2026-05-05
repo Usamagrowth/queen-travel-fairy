@@ -1,4 +1,19 @@
 ﻿import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+
+/*
+ * EmailJS Setup Instructions:
+ * 1. Go to https://www.emailjs.com/ and create an account
+ * 2. Create an email service (Gmail, Outlook, etc.)
+ * 3. Create an email template with these variables:
+ *    - {{from_name}} - Customer's name
+ *    - {{from_email}} - Customer's email
+ *    - {{destination}} - Selected destination
+ *    - {{travel_date}} - Travel date
+ *    - {{return_date}} - Return date
+ *    - {{to_name}} - Your business name
+ * 4. Replace the SERVICE_ID, TEMPLATE_ID, and PUBLIC_KEY below with your actual values
+ */
 
 const Booking = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +25,13 @@ const Booking = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  // EmailJS configuration - Replace these with your actual IDs
+  const SERVICE_ID = 'service_hfchuvt';
+  const TEMPLATE_ID = 'template_0tmahsn';
+  const PUBLIC_KEY = 'rl5-5EWhF22Km5XjP';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,24 +54,53 @@ const Booking = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-    // Proceed with form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry! We will contact you soon.');
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      destination: '',
-      travelDate: '',
-      returnDate: ''
-    });
+
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      // Prepare email data
+      const emailData = {
+        from_name: formData.name,
+        from_email: formData.email,
+        destination: formData.destination,
+        travel_date: formData.travelDate,
+        return_date: formData.returnDate,
+        to_name: 'Queen Travel Fairy Team',
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        emailData,
+        PUBLIC_KEY
+      );
+
+      // Success
+      setSubmitMessage('Thank you for your inquiry! We will contact you soon.');
+      setFormData({
+        name: '',
+        email: '',
+        destination: '',
+        travelDate: '',
+        returnDate: ''
+      });
+      setErrors({});
+
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmitMessage('Sorry, there was an error sending your message. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -170,10 +221,21 @@ const Booking = () => {
 
           <button
             type="submit"
-            className=" flex rounded-full bg-linear-to-r from-[#D4AF37] via-[#f7d671] to-[#d4af37] px-2 py-1 text-slate-950 font-semibold uppercase tracking-[0.15em] shadow-xl shadow-[#D4AF37]/20 transition-transform duration-200 cursor-pointer hover:-translate-y-1"
+            disabled={isSubmitting}
+            className="w-full flex justify-center items-center px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-[#FFD966] via-[#F2C94C] to-[#D4AF37] text-slate-950 font-semibold rounded-full uppercase tracking-[0.15em] sm:tracking-[0.22em] text-xs sm:text-sm shadow-[0_24px_60px_rgba(212,175,55,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_72px_rgba(212,175,55,0.45)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none"
           >
-            Request Consultation
+            {isSubmitting ? 'Sending...' : 'Request Consultation'}
           </button>
+
+          {submitMessage && (
+            <div className={`mt-4 p-4 rounded-lg text-center ${
+              submitMessage.includes('error') 
+                ? 'bg-red-900/20 border border-red-500/30 text-red-400'
+                : 'bg-green-900/20 border border-green-500/30 text-green-400'
+            }`}>
+              {submitMessage}
+            </div>
+          )}
         </form>
       </div>
     </section>

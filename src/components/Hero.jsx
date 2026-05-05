@@ -103,7 +103,7 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="absolute inset-0"
             >
-              <img src={slide.bgImg} alt={slide.title} className="w-full h-full object-cover p-2 rounded-3xl " />
+              <img src={slide.bgImg} alt={slide.title} className="w-full h-[570px] object-cover p-2 rounded-3xl " />
               <div className="absolute inset-0 justify-center items-center bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent" />
               <div className="absolute bottom-32  left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
                 <motion.h1

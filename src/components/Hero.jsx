@@ -40,7 +40,7 @@ const Hero = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className='flex justify-between items-center px-5 py-5 absolute top-0 left-0 right-0 z-50'>
+      <nav className='flex justify-between items-center px-6 py-5 absolute top-0 left-0 right-0 z-50'>
         <a className="w-20 h-20" href="#home">
           <img className="w-full h-full object-cover" src={logo} alt="Logo" />
         </a>

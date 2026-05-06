@@ -9,7 +9,7 @@ const toggleMobileNav = () => {
 };
      return(
         <>
-     <nav className='flex justify-between items-center px-5 py-5 '>
+     <nav className='flex justify-between items-center px-5  '>
        <a className="w-20 h-20" href="/">
         <img className="w-full h-full object-cover" src={logo} alt="Logo" />
       </a>

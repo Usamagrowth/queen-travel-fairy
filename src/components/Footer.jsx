@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="grid gap-12 md:grid-cols-3">
                     <div className="space-y-5">
                         <div>
-                            <p className="text-xl md:text-3xl font-semibold tracking-tight text-white">Queen Travel Fairy</p>
+                            <p className="text-xl md:text-3xl font-serif font-semibold tracking-tight text-white">Queen Travel Fairy</p>
                             <p className="mt-3 max-w-sm text-slate-400">
                                 Discover unforgettable journeys with luxury service, custom itineraries, and expert local guides. Let us make your next trip effortless.
                             </p>

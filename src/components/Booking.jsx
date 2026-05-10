@@ -1,8 +1,12 @@
-﻿import { useState } from 'react';
+﻿import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 
-
 const Booking = () => {
+  // Initialize once when component loads
+  useEffect(() => {
+    emailjs.init("rl5-5EWhF22Km5XjP");
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,29 +19,21 @@ const Booking = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
-  // EmailJS configuration - Replace these with your actual IDs
-  const SERVICE_ID = 'service_hfchuvt';
+  const SERVICE_ID = 'service_ifz1z0m';
   const TEMPLATE_ID = 'template_0tmahsn';
-  const PUBLIC_KEY = 'rl5-5EWhF22Km5XjP';
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
   };
 
   const validateForm = () => {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.email.trim()) newErrors.email = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
     if (!formData.destination) newErrors.destination = 'Please select a destination';
     if (!formData.travelDate) newErrors.travelDate = 'Travel date is required';
     if (!formData.returnDate) newErrors.returnDate = 'Return date is required';
-    else if (new Date(formData.returnDate) <= new Date(formData.travelDate)) newErrors.returnDate = 'Return date must be after travel date';
     return newErrors;
   };
 
@@ -52,43 +48,33 @@ const Booking = () => {
     setIsSubmitting(true);
     setSubmitMessage('');
 
+    // Mapping state to EmailJS Template variables
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      destination: formData.destination,
+      travel_date: formData.travelDate,
+      return_date: formData.returnDate,
+      to_name: 'Queen Travel Fairy Team',
+    };
+
     try {
-      // Prepare email data
-      const emailData = {
-        from_name: formData.name,
-        from_email: formData.email,
-        destination: formData.destination,
-        travel_date: formData.travelDate,
-        return_date: formData.returnDate,
-        to_name: 'Queen Travel Fairy Team',
-      };
-
-      // Send email using EmailJS
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        emailData,
-        PUBLIC_KEY
-      );
-
-      // Success
-      setSubmitMessage('Thank you for your inquiry! We will contact you soon.');
-      setFormData({
-        name: '',
-        email: '',
-        destination: '',
-        travelDate: '',
-        returnDate: ''
-      });
-      setErrors({});
-
+      // We already initialized in useEffect, so we just call send()
+      const result = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+      
+      if(result.status === 200) {
+        setSubmitMessage('Thank you for your inquiry! We will contact you soon.');
+        setFormData({ name: '', email: '', destination: '', travelDate: '', returnDate: '' });
+      }
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('FAILED...', error);
+      // This will help you see if it's a network block or a settings error
       setSubmitMessage('Sorry, there was an error sending your message. Please try again or contact us directly.');
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <section id="booking" className=" bg-slate-950 text-white px-6 py-5">
@@ -209,7 +195,7 @@ const Booking = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-68 flex justify-center items-center px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-[#FFD966] via-[#F2C94C] to-[#D4AF37] text-slate-950 font-semibold rounded-full uppercase tracking-[0.15em] sm:tracking-[0.22em] text-xs sm:text-sm shadow-[0_24px_60px_rgba(212,175,55,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_72px_rgba(212,175,55,0.45)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none"
+            className="w-full flex justify-center cursor-pointer items-center px-4 sm:px-4 py-4 sm:py-3 bg-gradient-to-r from-[#FFD966] via-[#F2C94C] to-[#D4AF37] text-slate-950 font-semibold rounded-full uppercase tracking-[0.15em] sm:tracking-[0.22em] text-xs sm:text-sm shadow-[0_24px_60px_rgba(212,175,55,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_72px_rgba(212,175,55,0.45)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none"
           >
             {isSubmitting ? 'Sending...' : 'Request Consultation'}
           </button>

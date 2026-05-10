@@ -103,9 +103,9 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="absolute inset-0"
             >
-              <img src={slide.bgImg} alt={slide.title} className="w-full h-[450px] md:h-[520px] object-cover p-1 rounded-3xl " />
+              <img src={slide.bgImg} alt={slide.title} className="w-full h-[500px] md:h-[550px] object-cover p-3 rounded-3xl " />
               <div className="absolute inset-0 justify-center items-center bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent" />
-              <div className="absolute md:bottom-29 bottom-44 sm:bottom-40  left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
+              <div className="absolute md:bottom-23 bottom-30 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: slideIndex === idx ? 1 : 0, y: slideIndex === idx ? 0 : 20 }}
@@ -122,12 +122,13 @@ const Hero = () => {
                 >
                   {slide.subtitle}
                 </motion.p>
+                 <a href="#booking" className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-[#FFD966] via-[#F2C94C] to-[#D4AF37] text-slate-950 font-semibold rounded-full uppercase tracking-[0.15em] sm:tracking-[0.22em] text-xs sm:text-sm shadow-[0_24px_60px_rgba(212,175,55,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_72px_rgba(212,175,55,0.45)] z-20">
+                Begin Your Journey
+         </a>
               </div>
             </motion.div>
           ))}
-          <a href="#booking" className="absolute md:bottom-27 bottom-42 sm:bottom-40 left-4 sm:left-6 md:left-8 inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-[#FFD966] via-[#F2C94C] to-[#D4AF37] text-slate-950 font-semibold rounded-full uppercase tracking-[0.15em] sm:tracking-[0.22em] text-xs sm:text-sm shadow-[0_24px_60px_rgba(212,175,55,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_72px_rgba(212,175,55,0.45)] z-20">
-            Begin Your Journey
-          </a>
+         
          
         </div>
    

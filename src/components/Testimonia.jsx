@@ -27,7 +27,7 @@ const Testimonia = () => {
 
                     <div className="flex-1">
                         <p className="text-[#D4AF37] text-base sub-title font-medium mb-2">Testimonial</p>
-                        <h2 className="text-xl md:text-3xl font-bold leading-tight mb-6">
+                        <h2 className="text-xl md:text-3xl font-serif font-bold leading-tight mb-6">
                             What They Say About Us
                         </h2>
                         <div className="grid gap-5">

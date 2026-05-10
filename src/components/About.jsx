@@ -2,7 +2,7 @@ import { AccessibilityIcon } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(96,165,250,0.12),_transparent_30%),#0f172a] text-white py-5 px-6 ">
+    <section id="about" className="bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(96,165,250,0.12),_transparent_30%),#0f172a] text-white pb-5  px-6 ">
       <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-2 items-center">
         <div className="space-y-8">
           <div className="inline-flex items-center gap-3 uppercase tracking-[0.3em] text-sm text-[#D4AF37] font-semibold">

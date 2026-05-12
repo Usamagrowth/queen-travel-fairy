@@ -1,12 +1,7 @@
-﻿import { useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
+﻿import { useState } from 'react';
+import { sendBookingInquiry } from '../config/emailjs';
 
 const Booking = () => {
-  // Initialize once when component loads
-  useEffect(() => {
-    emailjs.init("rl5-5EWhF22Km5XjP");
-  }, []);
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,9 +13,6 @@ const Booking = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
-
-  const SERVICE_ID = 'service_ifz1z0m';
-  const TEMPLATE_ID = 'template_0tmahsn';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,6 +37,7 @@ const Booking = () => {
       return;
     }
 
+    setErrors({});
     setIsSubmitting(true);
     setSubmitMessage('');
 
@@ -59,16 +52,18 @@ const Booking = () => {
     };
 
     try {
-      // We already initialized in useEffect, so we just call send()
-      const result = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
-      
-      if(result.status === 200) {
+      const result = await sendBookingInquiry(templateParams);
+
+      if (result.status === 200) {
         setSubmitMessage('Thank you for your inquiry! We will contact you soon.');
         setFormData({ name: '', email: '', destination: '', travelDate: '', returnDate: '' });
       }
     } catch (error) {
-      console.error('FAILED...', error);
-      // This will help you see if it's a network block or a settings error
+      const detail =
+        typeof error === 'object' && error !== null && 'text' in error
+          ? error.text
+          : String(error);
+      console.error('EmailJS send failed:', detail);
       setSubmitMessage('Sorry, there was an error sending your message. Please try again or contact us directly.');
     } finally {
       setIsSubmitting(false);

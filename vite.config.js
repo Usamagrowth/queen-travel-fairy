@@ -7,4 +7,24 @@ export default defineConfig({
   plugins: [
    react(), tailwindcss(),
   ],
+  server: {
+    proxy: {
+      '/api/emailjs': {
+        target: 'https://api.emailjs.com',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/api\/emailjs/, ''),
+      },
+    },
+  },
+  preview: {
+    proxy: {
+      '/api/emailjs': {
+        target: 'https://api.emailjs.com',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/api\/emailjs/, ''),
+      },
+    },
+  },
 })

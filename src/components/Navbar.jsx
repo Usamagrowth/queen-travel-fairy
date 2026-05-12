@@ -20,6 +20,7 @@ const toggleMobileNav = () => {
             <li className='text-xl'><a href="#destination">Destination</a></li>
             <li className='text-xl'><a href="#services">Services</a></li>
             <li className='text-xl'><a href="#reviews">Reviews</a></li>
+            <li className='text-xl'><a href="#faq">FAQ</a></li>
      </ul>
      </div>
       <div>
@@ -41,6 +42,7 @@ const toggleMobileNav = () => {
             <li className='text-xl'><a href="#destination" onClick={() => setMobileNav(false)}>Destination</a></li>
             <li className='text-xl'><a href="#services" onClick={() => setMobileNav(false)}>Services</a></li>
             <li className='text-xl'><a href="#reviews" onClick={() => setMobileNav(false)}>Reviews</a></li>
+            <li className='text-xl'><a href="#faq" onClick={() => setMobileNav(false)}>FAQ</a></li>
         </ul>
    </aside>)}
    </>

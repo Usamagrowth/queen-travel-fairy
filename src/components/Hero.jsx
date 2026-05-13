@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/queen-logo.png';
+import logoBg from '../assets/bgqueen-logo.jpg';
 
 const Hero = () => {
   const [mobileNav, setMobileNav] = useState(false);
@@ -38,19 +39,28 @@ const Hero = () => {
   }, [slides.length]);
 
   return (
-    <>
-      {/* Navbar */}
+    <div id="home">
+      {/* Site header + mobile menu (single source for top nav) */}
       <nav className='flex justify-between items-center px-6 py-5 absolute top-0 left-0 right-0 z-50'>
-        <a className="w-20 h-20" href="#home">
-          <img className="w-full h-full object-cover" src={logo} alt="Logo" />
+        <a
+          className={`flex h-20 w-20 shrink-0 items-center justify-center md:p-0 ${
+            mobileNav
+              ? 'max-md:rounded-2xl max-md:border max-md:border-white/25 max-md:p-2 max-md:shadow-[0_8px_30px_rgba(0,0,0,0.35)] max-md:bg-cover max-md:bg-center'
+              : ''
+          }`}
+          href="#home"
+          style={mobileNav ? { backgroundImage: `url(${logoBg})` } : undefined}
+        >
+          <img className="h-full w-full object-contain" src={logo} alt="Queen Travel Fairy logo" />
         </a>
         <div>
           <ul className='md:flex hidden gap-5'>
-            <li className='text-xl text-white'><a href="#home">Home</a></li>
+            <li className='text-xl text-white'><a href="#">Home</a></li>
             <li className='text-xl text-white'><a href="#about">About</a></li>
             <li className='text-xl text-white'><a href="#destination">Destination</a></li>
             <li className='text-xl text-white'><a href="#services" >Services</a></li>
             <li className='text-xl text-white'><a href="#reviews">Reviews</a></li>
+            <li className='text-xl text-white'><a href="#faq">FAQ</a></li>
           </ul>
         </div>
         <div>
@@ -83,6 +93,9 @@ const Hero = () => {
             <li className='text-3xl text-white hover:text-[#D4AF37] transition-colors'>
               <a href="#reviews" onClick={() => setMobileNav(false)}>Reviews</a>
             </li>
+             <li className='text-3xl text-white hover:text-[#D4AF37] transition-colors'>
+              <a href="#faq" onClick={() => setMobileNav(false)}>FAQ</a>
+            </li>
             <li className='mt-8'>
               <a href="#booking" onClick={() => setMobileNav(false)} className="px-6 py-3 bg-gradient-to-r from-[#FFD966] via-[#F2C94C] to-[#D4AF37] text-slate-950 font-semibold rounded-full uppercase tracking-[0.15em] text-sm shadow-[0_24px_60px_rgba(212,175,55,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_28px_72px_rgba(212,175,55,0.45)]">
                 Book Now
@@ -103,7 +116,7 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="absolute inset-0"
             >
-              <img src={slide.bgImg} alt={slide.title} className="w-full h-[500px] md:h-[550px] object-cover p-3 rounded-3xl " />
+              <img src={slide.bgImg} alt={slide.title} className="w-full h-[500px] md:h-[550px] object-cover p-2 rounded-3xl " />
               <div className="absolute inset-0 justify-center items-center bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent" />
               <div className="absolute md:bottom-23 bottom-30 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
                 <motion.h1
@@ -133,7 +146,7 @@ const Hero = () => {
         </div>
    
     </section>
-    </>
+    </div>
   );
 };
 

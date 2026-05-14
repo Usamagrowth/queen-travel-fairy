@@ -139,10 +139,10 @@ const Footer = () => {
                             <a href="https://www.facebook.com/QueenTravelFairy" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
                                 <FaFacebook className="h-4 w-4" />
                             </a>
-                            <a href="https://www.instagram.com/queentravelfairy" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
+                            <a href="https://www.instagram.com/thequeenstravelfairy" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
                                 <FaInstagram className="h-4 w-4" />
                             </a>
-                            <a href="https://twitter.com/queentravelfairy" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
+                            <a href="https://x.com/504Qu33n777" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
                                 <FaTwitter className="h-4 w-4" />
                             </a>
                         </div>
@@ -151,12 +151,7 @@ const Footer = () => {
 
                 <div className="mt-12 border-t border-slate-800 pt-8 text-sm text-slate-500 sm:flex sm:items-center sm:justify-between gap-4">
                     <p className="text-center sm:text-left">&copy; {new Date().getFullYear()} Queen Travel Fairy. All rights reserved.</p>
-                    <div className="mt-4 flex flex-wrap justify-center gap-4 sm:mt-0 sm:justify-end">
-                        <a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#terms" className="hover:text-white transition-colors">Terms</a>
-                        <a href="#support" className="hover:text-white transition-colors">Support</a>
-                    </div>
-                </div>
+               </div>
             </div>
         </footer>
     );

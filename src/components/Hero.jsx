@@ -43,7 +43,7 @@ const Hero = () => {
       {/* Site header + mobile menu (single source for top nav) */}
       <nav className='flex justify-between items-center px-6 py-5 absolute top-0 left-0 right-0 z-50'>
         <a
-          className={`flex h-20 w-20 shrink-0 items-center justify-center md:p-0 ${
+          className={`flex h-15 w-15 shrink-0 items-center justify-center md:p-0 ${
             mobileNav
               ? 'max-md:rounded-2xl max-md:border max-md:border-white/25 max-md:p-2 max-md:shadow-[0_8px_30px_rgba(0,0,0,0.35)] max-md:bg-cover max-md:bg-center'
               : ''

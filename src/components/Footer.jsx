@@ -1,7 +1,8 @@
 ﻿import { useState } from 'react';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram} from 'react-icons/fa';
 import { sendNewsletterSignup } from '../config/emailjs';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -143,7 +144,7 @@ const Footer = () => {
                                 <FaInstagram className="h-4 w-4" />
                             </a>
                             <a href="https://x.com/504Qu33n777" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
-                                <FaTwitter className="h-4 w-4" />
+                                <FaXTwitter className="h-4 w-4" />
                             </a>
                         </div>
                     </div>

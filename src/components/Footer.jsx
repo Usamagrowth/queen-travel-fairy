@@ -137,7 +137,7 @@ const Footer = () => {
                             </p>
                         )}
                         <div className="mt-6 flex items-center gap-4 text-slate-400">
-                            <a href="https://www.facebook.com/QueenTravelFairy" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
+                            <a href="https://web.facebook.com/profile.php?id=61588805145654" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
                                 <FaFacebook className="h-4 w-4" />
                             </a>
                             <a href="https://www.instagram.com/thequeenstravelfairy" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full border border-slate-800 p-3 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">

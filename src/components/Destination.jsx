@@ -28,9 +28,14 @@ const Destinations = () => {
       image: "https://images.unsplash.com/photo-1528255915607-9012fda0f838?q=80&w=765&auto=format&fit=crop",
     },
      {
-      city: "Canada",
-      country: "London",
+      city: "Bali",
+      country: "Indonesia",
       image: "https://plus.unsplash.com/premium_photo-1687984123129-1794500ac338?q=80&w=687&auto=format&fit=crop",
+    },
+     {
+      city: "Africa",
+      country: "Kenya",
+      image: "https://images.unsplash.com/photo-1512100356356-de1b84283e18?q=80&w=775&auto=format&fit=crop",
     },
   ];
   
